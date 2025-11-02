@@ -10,8 +10,8 @@ import java.util.Map;
 
 
 public class Graph {
-    public final int n; // number of nodes
-    public final List<Edge>[] adj; // adjacency list
+    public final int n;
+    public final List<Edge>[] adj;
     public final boolean directed;
     public final int source;
     public final String weightModel;
