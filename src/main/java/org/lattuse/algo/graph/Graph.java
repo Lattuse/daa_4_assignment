@@ -47,25 +47,42 @@ public class Graph {
         Map<?, ?> map = mapper.readValue(new File(filename), Map.class);
         int n = (int) map.get("n");
 
-        Boolean directedVal = (Boolean) map.get("directed");
-        boolean directed = directedVal != null ? directedVal : true;
+        Boolean directedObj = (Boolean) map.get("directed");
+        boolean directed = directedObj != null ? directedObj : true;
 
-        Integer sourceVal = (Integer) map.get("source");
-        int source = sourceVal != null ? sourceVal : -1;
+        Object sourceVal = map.get("source");
+        int source = -1;
+        if (sourceVal != null) {
+            if (sourceVal instanceof Number) {
+                source = ((Number) sourceVal).intValue();
+            } else if (sourceVal instanceof String) {
+                source = Integer.parseInt((String) sourceVal);
+            }
+        }
 
-        String weightModelVal = (String) map.get("weight_model");
-        String weightModel = weightModelVal != null ? weightModelVal : "edge";
+        String weightModel = "edge";
+        Object wmObj = map.get("weight_model");
+        if (wmObj != null && wmObj instanceof String) {
+            weightModel = (String) wmObj;
+        }
 
         Graph g = new Graph(n, directed, source, weightModel);
-        List<Map<String,Object>> edges = (List<Map<String,Object>>) map.get("edges");
-        for (Map<String,Object> e : edges) {
-            int u = (int) e.get("u");
-            int v = (int) e.get("v");
-            int w = (int) e.get("w");
+
+        List<Map<String, Object>> edges = (List<Map<String, Object>>) map.get("edges");
+        for (Map<String, Object> e : edges) {
+            int u = 0, v = 0, w = 0;
+            Object uObj = e.get("u");
+            Object vObj = e.get("v");
+            Object wObj = e.get("w");
+            if (uObj instanceof Number) u = ((Number) uObj).intValue();
+            if (vObj instanceof Number) v = ((Number) vObj).intValue();
+            if (wObj instanceof Number) w = ((Number) wObj).intValue();
+
             g.addEdge(u, v, w);
         }
         return g;
     }
+
 
 }
 
