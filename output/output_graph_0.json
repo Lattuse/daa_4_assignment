@@ -1,7 +1,0 @@
-{
-  "sccComponents" : [ [ 2, 1, 0 ], [ 7 ], [ 6 ], [ 5 ], [ 4 ], [ 3 ] ],
-  "topoOrder" : [ 0, 5, 4, 3, 2, 1 ],
-  "shortestDistances" : [ 2147483647, 10, 7, 6, 2, 0 ],
-  "longestDistances" : [ -2147483648, 10, 7, 6, 2, 0 ],
-  "longestPath" : [ 5, 4, 3, 2, 1 ]
-}

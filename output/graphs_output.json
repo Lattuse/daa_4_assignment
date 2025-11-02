@@ -1,0 +1,163 @@
+[ {
+  "id" : 0,
+  "sccComponents" : [ [ 2, 1, 0 ], [ 7 ], [ 6 ], [ 5 ], [ 4 ], [ 3 ] ],
+  "topoOrder" : [ 0, 5, 4, 3, 2, 1 ],
+  "shortestDistances" : [ 2147483647, 10, 7, 6, 2, 0 ],
+  "longestDistances" : [ -2147483648, 10, 7, 6, 2, 0 ],
+  "longestPath" : [ 5, 4, 3, 2, 1 ],
+  "metrics" : {
+    "sccDfsVisits" : 8,
+    "sccEdgeVisits" : 7,
+    "topoPushCount" : 6,
+    "topoPopCount" : 6,
+    "dagRelaxations" : 4,
+    "timeSccNs" : 432700,
+    "timeTopoNs" : 728700,
+    "timeShortestPathNs" : 349700,
+    "timeLongestPathNs" : 19901
+  }
+}, {
+  "id" : 1,
+  "sccComponents" : [ [ 6 ], [ 5 ], [ 4 ], [ 3 ], [ 2 ], [ 1 ], [ 0 ] ],
+  "topoOrder" : [ 6, 5, 4, 3, 2, 1, 0 ],
+  "shortestDistances" : [ 21, 20, 18, 15, 9, 4, 0 ],
+  "longestDistances" : [ 21, 20, 18, 15, 9, 4, 0 ],
+  "longestPath" : [ 6, 5, 4, 3, 2, 1, 0 ],
+  "metrics" : {
+    "sccDfsVisits" : 7,
+    "sccEdgeVisits" : 6,
+    "topoPushCount" : 7,
+    "topoPopCount" : 7,
+    "dagRelaxations" : 6,
+    "timeSccNs" : 14700,
+    "timeTopoNs" : 23500,
+    "timeShortestPathNs" : 20001,
+    "timeLongestPathNs" : 10999
+  }
+}, {
+  "id" : 2,
+  "sccComponents" : [ [ 2, 1, 0 ], [ 5, 4, 3 ], [ 8 ], [ 7 ], [ 6 ] ],
+  "topoOrder" : [ 0, 1, 4, 3, 2 ],
+  "shortestDistances" : [ 2147483647, 2147483647, 6, 5, 0 ],
+  "longestDistances" : [ -2147483648, -2147483648, 6, 5, 0 ],
+  "longestPath" : [ 4, 3, 2 ],
+  "metrics" : {
+    "sccDfsVisits" : 9,
+    "sccEdgeVisits" : 8,
+    "topoPushCount" : 5,
+    "topoPopCount" : 5,
+    "dagRelaxations" : 2,
+    "timeSccNs" : 10701,
+    "timeTopoNs" : 18300,
+    "timeShortestPathNs" : 15800,
+    "timeLongestPathNs" : 3600
+  }
+}, {
+  "id" : 3,
+  "sccComponents" : [ [ 2, 1, 0 ], [ 5, 4, 3 ], [ 11 ], [ 10 ], [ 9 ], [ 8 ], [ 7 ], [ 6 ] ],
+  "topoOrder" : [ 0, 1, 7, 6, 5, 4, 3, 2 ],
+  "shortestDistances" : [ 2147483647, 2147483647, 15, 13, 10, 5, 4, 0 ],
+  "longestDistances" : [ -2147483648, -2147483648, 15, 13, 10, 5, 4, 0 ],
+  "longestPath" : [ 7, 6, 5, 4, 3, 2 ],
+  "metrics" : {
+    "sccDfsVisits" : 12,
+    "sccEdgeVisits" : 11,
+    "topoPushCount" : 8,
+    "topoPopCount" : 8,
+    "dagRelaxations" : 5,
+    "timeSccNs" : 12801,
+    "timeTopoNs" : 15900,
+    "timeShortestPathNs" : 17999,
+    "timeLongestPathNs" : 15901
+  }
+}, {
+  "id" : 4,
+  "sccComponents" : [ [ 2, 1, 0 ], [ 6, 5, 4, 3 ], [ 14 ], [ 13 ], [ 12 ], [ 11 ], [ 10 ], [ 9 ], [ 8 ], [ 7 ] ],
+  "topoOrder" : [ 0, 1, 9, 8, 7, 6, 5, 4, 3, 2 ],
+  "shortestDistances" : [ 2147483647, 2147483647, 16, 15, 13, 10, 8, 7, 3, 0 ],
+  "longestDistances" : [ -2147483648, -2147483648, 16, 15, 13, 10, 8, 7, 3, 0 ],
+  "longestPath" : [ 9, 8, 7, 6, 5, 4, 3, 2 ],
+  "metrics" : {
+    "sccDfsVisits" : 15,
+    "sccEdgeVisits" : 14,
+    "topoPushCount" : 10,
+    "topoPopCount" : 10,
+    "dagRelaxations" : 7,
+    "timeSccNs" : 16399,
+    "timeTopoNs" : 16700,
+    "timeShortestPathNs" : 20101,
+    "timeLongestPathNs" : 10700
+  }
+}, {
+  "id" : 5,
+  "sccComponents" : [ [ 2, 1, 0 ], [ 5, 4, 3 ], [ 8, 7, 6 ], [ 14, 13, 12, 11, 10, 9 ], [ 17 ], [ 16 ], [ 15 ] ],
+  "topoOrder" : [ 0, 1, 2, 3, 6, 5, 4 ],
+  "shortestDistances" : [ 2147483647, 2147483647, 2147483647, 2147483647, 6, 4, 0 ],
+  "longestDistances" : [ -2147483648, -2147483648, -2147483648, -2147483648, 6, 4, 0 ],
+  "longestPath" : [ 6, 5, 4 ],
+  "metrics" : {
+    "sccDfsVisits" : 18,
+    "sccEdgeVisits" : 17,
+    "topoPushCount" : 7,
+    "topoPopCount" : 7,
+    "dagRelaxations" : 2,
+    "timeSccNs" : 17401,
+    "timeTopoNs" : 13999,
+    "timeShortestPathNs" : 19201,
+    "timeLongestPathNs" : 3800
+  }
+}, {
+  "id" : 6,
+  "sccComponents" : [ [ 2, 1, 0 ], [ 5, 4, 3 ], [ 8, 7, 6 ], [ 12 ], [ 11 ], [ 10 ], [ 9 ], [ 15, 14, 13 ], [ 18, 17, 16 ], [ 24 ], [ 23 ], [ 22 ], [ 21 ], [ 20 ], [ 19 ] ],
+  "topoOrder" : [ 0, 1, 2, 6, 7, 8, 14, 5, 13, 4, 12, 3, 11, 10, 9 ],
+  "shortestDistances" : [ 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 12, 10, 6, 5, 3, 0 ],
+  "longestDistances" : [ -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, -2147483648, 12, 10, 6, 5, 3, 0 ],
+  "longestPath" : [ 14, 13, 12, 11, 10, 9 ],
+  "metrics" : {
+    "sccDfsVisits" : 25,
+    "sccEdgeVisits" : 23,
+    "topoPushCount" : 15,
+    "topoPopCount" : 15,
+    "dagRelaxations" : 5,
+    "timeSccNs" : 20500,
+    "timeTopoNs" : 20299,
+    "timeShortestPathNs" : 20801,
+    "timeLongestPathNs" : 7900
+  }
+}, {
+  "id" : 7,
+  "sccComponents" : [ [ 2, 1, 0 ], [ 5, 4, 3 ], [ 8, 7, 6 ], [ 11, 10, 9 ], [ 29 ], [ 28 ], [ 27 ], [ 26 ], [ 25 ], [ 24 ], [ 23 ], [ 22 ], [ 21 ], [ 20 ], [ 19 ], [ 18 ], [ 17 ], [ 16 ], [ 15 ], [ 14 ], [ 13 ], [ 12 ] ],
+  "topoOrder" : [ 0, 1, 2, 3, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4 ],
+  "shortestDistances" : [ 2147483647, 2147483647, 2147483647, 2147483647, 50, 46, 44, 41, 40, 36, 33, 31, 30, 26, 23, 21, 17, 14, 12, 7, 3, 0 ],
+  "longestDistances" : [ -2147483648, -2147483648, -2147483648, -2147483648, 50, 46, 44, 41, 40, 36, 33, 31, 30, 26, 23, 21, 17, 14, 12, 7, 3, 0 ],
+  "longestPath" : [ 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4 ],
+  "metrics" : {
+    "sccDfsVisits" : 30,
+    "sccEdgeVisits" : 29,
+    "topoPushCount" : 22,
+    "topoPopCount" : 22,
+    "dagRelaxations" : 17,
+    "timeSccNs" : 26300,
+    "timeTopoNs" : 25999,
+    "timeShortestPathNs" : 53400,
+    "timeLongestPathNs" : 28301
+  }
+}, {
+  "id" : 8,
+  "sccComponents" : [ [ 49 ], [ 48 ], [ 47 ], [ 46 ], [ 45 ], [ 44 ], [ 43 ], [ 42 ], [ 41 ], [ 40 ], [ 39 ], [ 38 ], [ 37 ], [ 36 ], [ 35 ], [ 34 ], [ 33 ], [ 32 ], [ 31 ], [ 30 ], [ 29 ], [ 28 ], [ 27 ], [ 26 ], [ 25 ], [ 24 ], [ 23 ], [ 22 ], [ 21 ], [ 20 ], [ 19 ], [ 18 ], [ 17 ], [ 16 ], [ 15 ], [ 14 ], [ 13 ], [ 12 ], [ 11 ], [ 10 ], [ 9 ], [ 8 ], [ 7 ], [ 6 ], [ 5 ], [ 4 ], [ 3 ], [ 2 ], [ 1 ], [ 0 ] ],
+  "topoOrder" : [ 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ],
+  "shortestDistances" : [ 119, 115, 113, 110, 109, 107, 104, 100, 98, 97, 94, 90, 88, 85, 84, 82, 79, 75, 74, 71, 69, 68, 65, 61, 59, 56, 55, 53, 50, 46, 44, 41, 40, 38, 35, 31, 29, 26, 25, 23, 20, 18, 14, 13, 11, 8, 7, 5, 2, 0 ],
+  "longestDistances" : [ 119, 115, 113, 110, 109, 107, 104, 100, 98, 97, 94, 90, 88, 85, 84, 82, 79, 75, 74, 71, 69, 68, 65, 61, 59, 56, 55, 53, 50, 46, 44, 41, 40, 38, 35, 31, 29, 26, 25, 23, 20, 18, 14, 13, 11, 8, 7, 5, 2, 0 ],
+  "longestPath" : [ 49, 48, 47, 46, 45, 44, 43, 42, 41, 40, 39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 ],
+  "metrics" : {
+    "sccDfsVisits" : 50,
+    "sccEdgeVisits" : 49,
+    "topoPushCount" : 50,
+    "topoPopCount" : 50,
+    "dagRelaxations" : 49,
+    "timeSccNs" : 41900,
+    "timeTopoNs" : 85400,
+    "timeShortestPathNs" : 72800,
+    "timeLongestPathNs" : 198800
+  }
+} ]

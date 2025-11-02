@@ -10,7 +10,7 @@ import java.util.List;
 
 public class TopologicalSort {
     private final Graph graph;
-
+    // Yeah, metrics counters here
     public int pushCount = 0;
     public int popCount = 0;
 
@@ -47,6 +47,7 @@ public class TopologicalSort {
             }
         }
         if (order.size() != n) {
+            // Cycle found, no valid topological ordering
             return null;
         }
         return order;

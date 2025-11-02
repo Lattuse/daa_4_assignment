@@ -1,24 +1,24 @@
 package org.lattuse.algo;
 
-
-import org.lattuse.algo.dagsp.DAGShortestPaths;
 import org.lattuse.algo.graph.Graph;
 import org.lattuse.algo.output.GraphOutput;
-import org.lattuse.algo.scc.CondensationGraph;
-import org.lattuse.algo.scc.TarjanSCC;
-import org.lattuse.algo.topo.TopologicalSort;
+import org.lattuse.algo.output.GraphProcessor;
 
 import java.util.List;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.util.Map;
 
+
 public class Main {
     public static void main(String[] args) throws Exception {
         String filepath = "data/input.json";
 
+        // Create Jackson ObjectMapper instance for JSON parsing
         ObjectMapper mapper = new ObjectMapper();
         Map<?, ?> root = mapper.readValue(new File(filepath), Map.class);
+
+        // Get the list of individual graph objects
         List<Map<String, Object>> graphs = (List<Map<String, Object>>) root.get("graphs");
 
         if (graphs == null || graphs.isEmpty()) {
@@ -26,58 +26,32 @@ public class Main {
             return;
         }
 
+        List<GraphOutput> allResults = new java.util.ArrayList<>();
+
+        // Create a processor instance for running analysis on graphs
+        GraphProcessor processor = new GraphProcessor();
+
+        // Iterate over each graph, parse and process it
         for (int index = 0; index < graphs.size(); index++) {
-            System.out.println("\n=== Graph " + index + " ===\n");
+            System.out.println("\n=== Processing graph " + index + " ===\n");
 
             Graph graph = createGraphFromMap(graphs.get(index));
 
-            System.out.println("Nodes: " + graph.n);
+            GraphOutput output = processor.process(index, graph);
 
-            TarjanSCC scc = new TarjanSCC(graph);
-            List<List<Integer>> sccs = scc.findSCCs();
-            System.out.println("SCC count: " + sccs.size());
+            allResults.add(output);
 
-            CondensationGraph condensation = new CondensationGraph(graph, sccs);
-            Graph condGraph = condensation.condensation;
-
-            TopologicalSort topo = new TopologicalSort(condGraph);
-            List<Integer> topoOrder = topo.kahnSort();
-
-            System.out.println("Topological order of SCCs: " + topoOrder);
-
-            int sourceScc = condensation.getSccId()[graph.source];
-            DAGShortestPaths dagSp = new DAGShortestPaths(condGraph, sourceScc);
-
-            int[] shortest = dagSp.shortestPaths();
-            System.out.println("Shortest distances:");
-            for (int i = 0; i < shortest.length; i++) {
-                System.out.printf("SCC %d: %d%n", i, shortest[i]);
-            }
-
-            int[] longest = dagSp.longestPaths();
-            System.out.println("Longest distances:");
-            for (int i = 0; i < longest.length; i++) {
-                System.out.printf("SCC %d: %d%n", i, longest[i]);
-            }
-
-            List<Integer> longestPath = dagSp.reconstructLongestPath(longest);
-            System.out.println("Longest path in condensation graph: " + longestPath);
-
-            GraphOutput output = new GraphOutput(
-                    sccs,
-                    topoOrder,
-                    shortest,
-                    longest,
-                    longestPath
-            );
-
-            String outputFilename = "output/output_graph_" + index + ".json";
-            mapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File(outputFilename), output);
-
-            System.out.println("Output saved to " + outputFilename);
+            System.out.println("Processed graph " + index + ": SCCs=" + output.sccComponents.size());
         }
+
+        mapper.writerWithDefaultPrettyPrinter()
+                .writeValue(new File("output/graphs_output.json"), allResults);
+
+        System.out.println("All results saved to 'output/graphs_output.json'");
     }
+
+
+    // converts a raw map representing a graph JSON object into a Graph instance.
 
     private static Graph createGraphFromMap(Map<String, Object> map) {
         int n = (int) map.get("n");

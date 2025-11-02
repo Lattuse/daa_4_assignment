@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
+//Single-source shortest and longest path algorithms for DAG.
 
 public class DAGShortestPaths {
     private final Graph graph;
@@ -65,7 +66,7 @@ public class DAGShortestPaths {
         }
         return dist;
     }
-
+    // Reconstruct longest path from source to the farthest node
     public List<Integer> reconstructLongestPath(int[] dist) {
         int n = graph.n;
         int maxNode = 0;

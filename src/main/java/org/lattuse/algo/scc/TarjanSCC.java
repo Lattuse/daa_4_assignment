@@ -31,7 +31,7 @@ public class TarjanSCC {
         for (int i = 0; i < n; i++) ids[i] = -1;
     }
 
-
+    // Main caller to find SCCs
     public List<List<Integer>> findSCCs() {
         for (int i = 0; i < graph.n; i++) {
             if (ids[i] == -1) dfs(i);
