@@ -2,7 +2,7 @@
 Name: Mukashev Sultanbek
 
 Group: SE-2422
-***
+
 
 ## Data Summary
 
@@ -13,7 +13,7 @@ This project processes multiple directed graphs representing city-service and in
     - Nodes range from small (6–10) to medium (10–20) and large scale (up to 50).
 - **Weight model:** Edge weights are used consistently across all graphs to represent durations or costs associated with task dependencies.
 
-***
+
 
 ## Summary of Analysis Output (per graph)
 
@@ -29,7 +29,7 @@ This project processes multiple directed graphs representing city-service and in
     - The longest path (critical path) gives the most extended duration dependency chain, critical for scheduling.
     - The actual longest path vertex sequence is reconstructed for detailed scheduling insight.
 
-***
+
 
 ## Sample Output Excerpts for Graph ID 0
 
@@ -50,7 +50,7 @@ This project processes multiple directed graphs representing city-service and in
 - **Longest Path (Critical Path):**  
   [ 5, 4, 3, 2, 1 ]
 
-***
+
 
 ## Metrics and Performance
 
@@ -70,7 +70,7 @@ For each graph, detailed instrumentation metrics are recorded, including:
 
 Typical profiling shows that SCC and topological sorting times scale with graph size, with path computations slightly faster due to linear DP on DAG.
 
-***
+
 
 ## Conclusion
 
